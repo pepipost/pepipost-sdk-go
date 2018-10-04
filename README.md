@@ -43,6 +43,8 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
     go get github.com/apimatic/unirest-go
     ```
     
+    ![pic1.5](http://app1.falconide.com/integration_imgs/goimg/capture(25).png)
+    
   * This will install unirest-go in the ```GOPATH``` you specified in the system variables.
 
 <a name='quick-start'></a>
@@ -53,6 +55,8 @@ Quick guide for installing Pepipost Go library
 * Check **GOPATH** using below command
 
   ``` echo $GOPATH ```
+  
+  ![pic1](http://app1.falconide.com/integration_imgs/goimg/capture(24).png)
 
 * Change your directory to **$GOPATH** 
   
@@ -71,10 +75,16 @@ Quick guide for installing Pepipost Go library
   ``` mkdir $GOPATH/src/pepipost_lib ```
 
   ``` cp -r pepipost-sdk-go/src/pepipost_lib/* $GOPATH/src/pepipost_lib/ ```
+  
+  ![pic4](http://app1.falconide.com/integration_imgs/goimg/capture(26).png)
+  
+  ![pic5](http://app1.falconide.com/integration_imgs/goimg/capture(27).png)
 
 * make project using below command 
 
   ```  mkdir $GOPATH/src/pepipost_test && cd $GOPATH/src/pepipost_test ```
+  
+  ![pic7](http://app1.falconide.com/integration_imgs/goimg/capture(28).png)
 
 * Create sample Go file named **main.go**
 
@@ -93,6 +103,8 @@ Quick guide for installing Pepipost Go library
   ```go build main.go```
   
   ```./main.exe ``` (for windows) **OR** ```./main```
+  
+  ![img](http://app1.falconide.com/integration_imgs/goimg/capture(30).png)
  
 
 <a name='example'></a>
