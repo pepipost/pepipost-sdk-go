@@ -33,7 +33,6 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
 ## Prerequisites
 
 * **GO** (visit [Go installation page](https://golang.org/doc/install) for details on how to install Go)
-* **JVM** (Version 8 or later)
 * Ensure that **```GOROOT```** & **```GOPATH```** enviroment variable is set in the system variables. if not, set it to your working directory where you add your Go projects.
 * This library uses unirest-go http library. Therefore it will require internet access to resolve the dependency.
   
