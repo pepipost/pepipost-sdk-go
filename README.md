@@ -98,46 +98,44 @@ Quick guide for installing Pepipost Go library
 ## Sample Example  
 
 ```Go
-package main 
-
+package  main
 import (
-	"pepipost_lib/pepipost_pkg"
-    	"fmt"
-	"pepipost_lib/models_pkg"
+        "fmt"
+        "pepipost_lib/pepipost_pkg"
+        "pepipost_lib/models_pkg"
 )
 
 func main() {
-	client := PepipostClient.NewPEPIPOST()
-	email := client.Email()
-	ApiKey := "your apikey here"
-    	username := "to recipient here"
-   	fromEmail := "fromEmail@your verified domain"
-    	subject := "GO-SDK Pepipost "
-    	body := "This is Go-SDK"
-   	Body := &models_pkg.EmailBody{}
-   	Body.Personalizations = make([]*models_pkg.Personalizations,3)
+        client := PepipostClient.NewPEPIPOST()
+        email := client.Email()
+        ApiKey := "your apikey here"
+        username := "to recipient here"
+        fromEmail := "fromEmail@your verified domain"
+        subject := "GO-SDK Pepipost "
+        body := "This is Go-SDK"
+        Body := &models_pkg.EmailBody{}
+        Body.Personalizations = make([]*models_pkg.Personalizations,3)
 
-	Body.Personalizations[0] = &models_pkg.Personalizations{}
-    	Body.Personalizations[0].Recipient = &username
-    
-    	Body.From = models_pkg.From{}
-    	Body.From.FromEmail = &fromEmail
-    	Body.Subject = &subject
-    	Body.Content = &body
-    
-    	var err error
-    	var result *models_pkg.SendEmailResponse
-    	result, err = email.CreateSendEmail(&ApiKey, Body)
-    
-    	if err != nil{
-        	//TODO: Use err variable here
-        	fmt.Println(result)
-    	}else{
-        	//TODO: Use result variable here
-        	fmt.Println(result)
-    	}
+        Body.Personalizations[0] = &models_pkg.Personalizations{}
+        Body.Personalizations[0].Recipient = &username
+
+        Body.From = models_pkg.From{}
+        Body.From.FromEmail = &fromEmail
+        Body.Subject = &subject
+        Body.Content = &body
+
+        var err error
+        var result *models_pkg.SendEmailResponse
+        result, err = email.CreateSendEmail(&ApiKey, Body)
+
+        if err != nil{
+                //TODO: Use err variable here
+                fmt.Println(result)
+        }else{
+                //TODO: Use result variable here
+                fmt.Println(result)
+        }
 }
-
 ```
 
 <a name="announcements"></a>
