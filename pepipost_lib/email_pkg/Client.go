@@ -9,9 +9,9 @@ package email_pkg
 import (
 	"encoding/json"
 	"github.com/apimatic/unirest-go"
-	"pepipost_lib/apihelper_pkg"
-	"pepipost_lib/configuration_pkg"
-	"pepipost_lib/models_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/apihelper_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
 )
 
 /*
