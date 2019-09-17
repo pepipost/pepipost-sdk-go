@@ -6,9 +6,9 @@
 
 package PepipostClient
 
-import(
-	"pepipost_lib/configuration_pkg"
-	"pepipost_lib/email_pkg"
+import (
+	"pepipost-sdk-go/pepipost_lib/configuration_pkg"
+	"pepipost-sdk-go/pepipost_lib/email_pkg"
 )
 /*
  * Client structure as interface implementation

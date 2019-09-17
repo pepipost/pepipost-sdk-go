@@ -6,8 +6,10 @@
 
 package email_pkg
 
-import "pepipost_lib/models_pkg"
-import "pepipost_lib/configuration_pkg"
+import (
+	"pepipost-sdk-go/pepipost_lib/models_pkg"
+	"pepipost-sdk-go/pepipost_lib/configuration_pkg"
+)
 
 /*
  * Interface for the EMAIL_IMPL
