@@ -6,21 +6,21 @@
 
 package email_pkg
 
-import "github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
-import "github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
+import "pepipost_lib/models_pkg"
+import "pepipost_lib/configuration_pkg"
 
 /*
  * Interface for the EMAIL_IMPL
  */
 type EMAIL interface {
-    CreateSendEmail (*string, *models_pkg.EmailBody) (*models_pkg.SendEmailResponse, error)
+	CreateSendEmail(*string, *models_pkg.EmailBody) (*models_pkg.SendEmailResponse, error)
 }
 
 /*
  * Factory for the EMAIL interaface returning EMAIL_IMPL
  */
 func NewEMAIL(config configuration_pkg.CONFIGURATION) *EMAIL_IMPL {
-    client := new(EMAIL_IMPL)
-    client.config = config
-    return client
+	client := new(EMAIL_IMPL)
+	client.config = config
+	return client
 }

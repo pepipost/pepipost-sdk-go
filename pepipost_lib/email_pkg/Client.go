@@ -8,10 +8,11 @@ package email_pkg
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/apimatic/unirest-go"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/apihelper_pkg"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
+	"pepipost_lib/apihelper_pkg"
+	"pepipost_lib/configuration_pkg"
+	"pepipost_lib/models_pkg"
 )
 
 /*
@@ -34,9 +35,17 @@ func (me *EMAIL_IMPL) CreateSendEmail(
 	_queryBuilder := configuration_pkg.BASEURI
 
 	//prepare query string for API call
-	_queryBuilder = _queryBuilder + "/v2/sendEmail"
-
+	//	_queryBuilder = _queryBuilder + "/v2/sendEmail"
+	_queryBuilder = _queryBuilder + "/v4/sendEmail"
 	//variable to hold errors
+	/*	if BASE_URI != "" {
+		_queryBuilder = BASE_URI
+
+		//prepare query string for API call
+		//      _queryBuilder = _queryBuilder + "/v2/sendEmail"
+		_queryBuilder = _queryBuilder + "/v2/sendEmail"
+	}*/
+	//	fmt.Println(_queryBuilder)
 	var err error = nil
 	//validate and preprocess url
 	_queryBuilder, err = apihelper_pkg.CleanUrl(_queryBuilder)
@@ -56,7 +65,7 @@ func (me *EMAIL_IMPL) CreateSendEmail(
 	//prepare API request
 	_request := unirest.Post(_queryBuilder, headers, body)
 	//and invoke the API call request to fetch the response
-	_response, err := unirest.AsString(_request)
+	_response, err := unirest.AsString(_request, true)
 	if err != nil {
 		//error in API invocation
 		return nil, err

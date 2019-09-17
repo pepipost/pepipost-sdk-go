@@ -7,7 +7,5 @@
 package configuration_pkg
 
 /** The base Uri for API calls */
-const BASEURI string = "http://api.pepipost.com"
-
-
-
+//const BASEURI string = "http://api.pepipost.com"
+const BASEURI string = "https://apis.falconide.com"
