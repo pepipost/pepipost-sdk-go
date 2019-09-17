@@ -8,7 +8,7 @@ package email_pkg
 
 import (
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"github.com/apimatic/unirest-go"
 	"pepipost_lib/apihelper_pkg"
 	"pepipost_lib/configuration_pkg"
@@ -30,21 +30,17 @@ type EMAIL_IMPL struct {
  */
 func (me *EMAIL_IMPL) CreateSendEmail(
 	apiKey *string,
-	body *models_pkg.EmailBody) (*models_pkg.SendEmailResponse, error) {
+	body *models_pkg.EmailBody, BASE_URI string) (*models_pkg.SendEmailResponse, error) {
 	//the base uri for api requests
 	_queryBuilder := configuration_pkg.BASEURI
 
 	//prepare query string for API call
 	//	_queryBuilder = _queryBuilder + "/v2/sendEmail"
-	_queryBuilder = _queryBuilder + "/v4/sendEmail"
-	//variable to hold errors
-	/*	if BASE_URI != "" {
+	_queryBuilder = _queryBuilder + "/v2/sendEmail"
+	// given url
+	if BASE_URI != "" {
 		_queryBuilder = BASE_URI
-
-		//prepare query string for API call
-		//      _queryBuilder = _queryBuilder + "/v2/sendEmail"
-		_queryBuilder = _queryBuilder + "/v2/sendEmail"
-	}*/
+	}
 	//	fmt.Println(_queryBuilder)
 	var err error = nil
 	//validate and preprocess url

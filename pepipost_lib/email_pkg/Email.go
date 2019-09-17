@@ -13,7 +13,7 @@ import "pepipost_lib/configuration_pkg"
  * Interface for the EMAIL_IMPL
  */
 type EMAIL interface {
-	CreateSendEmail(*string, *models_pkg.EmailBody) (*models_pkg.SendEmailResponse, error)
+	CreateSendEmail(*string, *models_pkg.EmailBody, string) (*models_pkg.SendEmailResponse, error)
 }
 
 /*
