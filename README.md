@@ -49,7 +49,13 @@ Quick guide for installing Pepipost Go library
 * Change your directory to **$GOPATH** 
   
   ``` cd $GOPATH```
+
+* make project using below command 
+
+  ```  mkdir $GOPATH/src/pepipost_test && cd $GOPATH/src/ ```
   
+  ![pic7](http://app1.falconide.com/integration_imgs/goimg/capture(28).png)
+
 * Clone or download the repository using below command
 
   ``` git clone https://github.com/pepipost/pepipost-sdk-go.git ```
@@ -58,13 +64,10 @@ Quick guide for installing Pepipost Go library
   
   Download **[zip](https://github.com/pepipost/pepipost-sdk-go/archive/master.zip)**
 
-* make project using below command 
 
-  ```  mkdir $GOPATH/src/pepipost_test && cd $GOPATH/src/pepipost_test ```
-  
-  ![pic7](http://app1.falconide.com/integration_imgs/goimg/capture(28).png)
+* Create sample Go file named **main.go** in 
 
-* Create sample Go file named **main.go**
+``` cd $GOPATH/src/pepipost_test ```
 
   copy the below [sample example](#example) in your ```main.go``` file.
   
