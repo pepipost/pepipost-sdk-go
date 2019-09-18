@@ -34,17 +34,6 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
 
 * **GO** (visit [Go installation page](https://golang.org/doc/install) for details on how to install Go)
 * Ensure that **```GOROOT```** & **```GOPATH```** enviroment variable is set in the system variables. if not, set it to your working directory where you add your Go projects.
-* This library uses unirest-go http library. Therefore it will require internet access to resolve the dependency.
-  
-  * If Go is properly installed and configure, copy and run the following command to pull the dependency.
-  
-    ```Go
-    go get github.com/apimatic/unirest-go
-    ```
-    
-    ![pic1.5](http://app1.falconide.com/integration_imgs/goimg/capture(25).png)
-    
-  * This will install unirest-go in the ```GOPATH``` you specified in the system variables.
 
 <a name='quick-start'></a>
 ## Quick Start
@@ -68,16 +57,6 @@ Quick guide for installing Pepipost Go library
   **OR**
   
   Download **[zip](https://github.com/pepipost/pepipost-sdk-go/archive/master.zip)**
-
-* Run below command to make directory and copy library file ```pepipost_lib``` to your GOPATH **$GOPATH/src** directory 
-
-  ``` mkdir $GOPATH/src/pepipost_lib ```
-
-  ``` cp -r pepipost-sdk-go/src/pepipost_lib/* $GOPATH/src/pepipost_lib/ ```
-  
-  ![pic4](http://app1.falconide.com/integration_imgs/goimg/capture(26).png)
-  
-  ![pic5](http://app1.falconide.com/integration_imgs/goimg/capture(27).png)
 
 * make project using below command 
 
@@ -113,8 +92,8 @@ Quick guide for installing Pepipost Go library
 package  main
 import (
         "fmt"
-        "pepipost_lib/pepipost_pkg"
-        "pepipost_lib/models_pkg"
+        "pepipost-sdk-go/pepipost_lib/pepipost_pkg"
+        "pepipost-sdk-go/pepipost_lib/models_pkg"
 )
 
 func main() {
