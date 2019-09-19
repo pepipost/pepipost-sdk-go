@@ -169,7 +169,7 @@ func main() {
 <a name="announcements"></a>
 # Announcements
 
-v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-go/releases/) for details.
+v2.6.1 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-go/releases/) for details.
 
 All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-go/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
