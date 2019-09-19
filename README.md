@@ -49,7 +49,13 @@ Quick guide for installing Pepipost Go library
 * Change your directory to **$GOPATH** 
   
   ``` cd $GOPATH```
+
+* make project using below command 
+
+  ```  mkdir $GOPATH/src/pepipost_test && cd $GOPATH/src/ ```
   
+  ![pic7](http://app1.falconide.com/integration_imgs/goimg/capture(28).png)
+
 * Clone or download the repository using below command
 
   ``` git clone https://github.com/pepipost/pepipost-sdk-go.git ```
@@ -58,13 +64,10 @@ Quick guide for installing Pepipost Go library
   
   Download **[zip](https://github.com/pepipost/pepipost-sdk-go/archive/master.zip)**
 
-* make project using below command 
 
-  ```  mkdir $GOPATH/src/pepipost_test && cd $GOPATH/src/pepipost_test ```
-  
-  ![pic7](http://app1.falconide.com/integration_imgs/goimg/capture(28).png)
+* Create sample Go file named **main.go** in 
 
-* Create sample Go file named **main.go**
+``` cd $GOPATH/src/pepipost_test ```
 
   copy the below [sample example](#example) in your ```main.go``` file.
   
@@ -89,43 +92,77 @@ Quick guide for installing Pepipost Go library
 ## Sample Example  
 
 ```Go
-package  main
+package main
 import (
-        "fmt"
-        "pepipost-sdk-go/pepipost_lib/pepipost_pkg"
-        "pepipost-sdk-go/pepipost_lib/models_pkg"
+	"fmt"
+	"io/ioutil"
+	"os"
+	"pepipost-sdk-go/pepipost_lib/models_pkg"
+	"pepipost-sdk-go/pepipost_lib/pepipost_pkg"
 )
-
 func main() {
-        client := PepipostClient.NewPEPIPOST()
-        email := client.Email()
-        ApiKey := "your apikey here"
-        username := "to recipient here"
-        fromEmail := "fromEmail@your verified domain"
-        subject := "GO-SDK Pepipost "
-        body := "This is Go-SDK"
-        Body := &models_pkg.EmailBody{}
-        Body.Personalizations = make([]*models_pkg.Personalizations,3)
+	
+  client := PepipostClient.NewPEPIPOST()
+	email := client.Email()
+	ApiKey := "e8a874fbd6-XXXXXXXX-f0879205"
 
-        Body.Personalizations[0] = &models_pkg.Personalizations{}
-        Body.Personalizations[0].Recipient = &username
+	username := "toemails@gmail.com"
+	usernamecc := []string{"toemail_cc@gmail.com"}
+	usernamebcc := []string{"tobcc@netcore.co.in"}
+	fromEmail := "punit@register_domain.com"
+	subject := "GO-SDK -- [% name %]" 
+	body := "This is Go-SDK "
 
-        Body.From = models_pkg.From{}
-        Body.From.FromEmail = &fromEmail
-        Body.Subject = &subject
-        Body.Content = &body
+	xhead := map[string]string{
+		"x-custom1": "amp-content-header",
+		"x-custom2": "google-amp1",
+	}
 
-        var err error
-        var result *models_pkg.SendEmailResponse
-        result, err = email.CreateSendEmail(&ApiKey, Body)
+	attribute := map[string]string{
+		"name" : "pepipost",
+		"test_no" : "1234",
+	}
 
-        if err != nil{
-                //TODO: Use err variable here
-                fmt.Println(result)
-        }else{
-                //TODO: Use result variable here
-                fmt.Println(result)
-        }
+	Body := &models_pkg.EmailBody{}
+	Body.Personalizations = make([]*models_pkg.Personalizations, 3)
+	Body.Personalizations[0] = &models_pkg.Personalizations{}
+	Body.Personalizations[0].Recipient = &username
+	Body.Personalizations[0].RecipientCc = &usernamecc
+	Body.Personalizations[0].RecipientBcc = &usernamebcc
+	Body.Personalizations[0].Xheader = xhead
+	Body.Personalizations[0].Attributes = attribute
+
+	Body.From = models_pkg.From{}
+	Body.From.FromEmail = &fromEmail
+	Body.Subject = &subject
+	Body.Content = &body
+
+	b, err1 := ioutil.ReadFile("/tmp/ampcontent") // just pass the file name
+	if err1 != nil {
+		fmt.Print("error= ")
+		fmt.Print(err1)
+	}
+	//pass your custom URI (if given by PEPIPOST TEAM)
+	BASE_URI := ""
+	if len(os.Args) == 2 {
+		BASE_URI = os.Args[1]
+	}
+	str := string(b)
+	Body.AmpContent = &str
+
+	var err error
+	var result *models_pkg.SendEmailResponse
+	result, err = email.CreateSendEmail(&ApiKey, Body, BASE_URI)
+
+	if err != nil {
+		//TODO: Use err variable here
+		fmt.Print("result = ")
+		fmt.Println(result)
+	} else {
+		//TODO: Use result variable here
+		fmt.Print("resu=")
+		fmt.Println(err)
+	}
 }
 ```
 
