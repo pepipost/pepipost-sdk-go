@@ -7,8 +7,8 @@
 package email_pkg
 
 import (
-	"pepipost-sdk-go/pepipost_lib/models_pkg"
-	"pepipost-sdk-go/pepipost_lib/configuration_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
 )
 
 /*
