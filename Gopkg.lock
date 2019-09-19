@@ -18,6 +18,19 @@
   revision = "858ed2893f66df2366aededa134ba9941cde06a0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:65fa19cce8f4c5bb4215e0a8168591a4c3778852a3af745c965aec71974a9e4c"
+  name = "github.com/pepipost/pepipost-sdk-go"
+  packages = [
+    "pepipost_lib/apihelper_pkg",
+    "pepipost_lib/configuration_pkg",
+    "pepipost_lib/email_pkg",
+    "pepipost_lib/models_pkg",
+  ]
+  pruneopts = "UT"
+  revision = "9c35cd88358da79301cc3e35feb50c9ebf8f9270"
+
+[[projects]]
   digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
   name = "github.com/satori/go.uuid"
   packages = ["."]
@@ -28,6 +41,12 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/apimatic/unirest-go"]
+  input-imports = [
+    "github.com/apimatic/unirest-go",
+    "github.com/pepipost/pepipost-sdk-go/pepipost_lib/apihelper_pkg",
+    "github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg",
+    "github.com/pepipost/pepipost-sdk-go/pepipost_lib/email_pkg",
+    "github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

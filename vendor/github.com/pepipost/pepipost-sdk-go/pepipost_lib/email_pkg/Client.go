@@ -10,9 +10,9 @@ import (
 	"encoding/json"
 	//"fmt"
 	"github.com/apimatic/unirest-go"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/apihelper_pkg"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
+	"pepipost-sdk-go/pepipost_lib/apihelper_pkg"
+	"pepipost-sdk-go/pepipost_lib/configuration_pkg"
+	"pepipost-sdk-go/pepipost_lib/models_pkg"
 )
 
 /*
