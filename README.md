@@ -93,77 +93,72 @@ Quick guide for installing Pepipost Go library
 
 ```Go
 package main
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
-	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/pepipost_pkg"
+
+import(
+  "fmt"
+  "github.com/pepipost/pepipost-sdk-go/pepipost_lib/pepipost_pkg"
+  "github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
 )
-func main() {
-	
-  client := PepipostClient.NewPEPIPOST()
-	email := client.Email()
-	ApiKey := "e8a874fbd6-XXXXXXXX-f0879205"
 
-	username := "toemails@gmail.com"
-	usernamecc := []string{"toemail_cc@gmail.com"}
-	usernamebcc := []string{"tobcc@netcore.co.in"}
-	fromEmail := "punit@register_domain.com"
-	subject := "GO-SDK -- [% name %]" 
-	body := "This is Go-SDK "
+func main(){
 
-	xhead := map[string]string{
-		"x-custom1": "amp-content-header",
-		"x-custom2": "google-amp1",
-	}
+  ApiKey := "dfan3n4lk4212bjk39012hi3nrj1qk"
 
-	attribute := map[string]string{
-		"name" : "pepipost",
-		"test_no" : "1234",
-	}
+  client := PepipostClient.NewPEPIPOSTCLENT(ApiKey)
+  send := client.Send()
 
-	Body := &models_pkg.EmailBody{}
-	Body.Personalizations = make([]*models_pkg.Personalizations, 3)
-	Body.Personalizations[0] = &models_pkg.Personalizations{}
-	Body.Personalizations[0].Recipient = &username
-	Body.Personalizations[0].RecipientCc = &usernamecc
-	Body.Personalizations[0].RecipientBcc = &usernamebcc
-	Body.Personalizations[0].Xheader = xhead
-	Body.Personalizations[0].Attributes = attribute
+  fromEmail := "hello@your-registered-domain-with-pepipost"
+  fromName := "Pepipost"
+  htmlBody := "<html><body>Hello [%NAME%], Email testing is successful. <br> Hope you enjoyed this integration. <br></html>"
+  trueValue := true
+  falseValue := false
+  toName := "to-address"
+  toEmail := "to-address@mydomain.name"
 
-	Body.From = models_pkg.From{}
-	Body.From.FromEmail = &fromEmail
-	Body.Subject = &subject
-	Body.Content = &body
+  Body := &models_pkg.Send{}
 
-	b, err1 := ioutil.ReadFile("/tmp/ampcontent") // just pass the file name
-	if err1 != nil {
-		fmt.Print("error= ")
-		fmt.Print(err1)
-	}
-	//pass your custom URI (if given by PEPIPOST TEAM)
-	BASE_URI := ""
-	if len(os.Args) == 2 {
-		BASE_URI = os.Args[1]
-	}
-	str := string(b)
-	Body.AmpContent = &str
+  Body.From = models_pkg.From{}
+  Body.From.Email = &fromEmail
+  Body.From.Name = &fromName
 
-	var err error
-	var result *models_pkg.SendEmailResponse
-	result, err = email.CreateSendEmail(&ApiKey, Body, BASE_URI)
+  Body.Subject = "Pepipost Test Email from GOlang SDK"
+  Body.Content = make([]*models_pkg.Content,3)
+  Body.Content[0] = &models_pkg.Content{}
+  Body.Content[0].Type = models_pkg.Type_HTML
+  Body.Content[0].Value = &htmlBody
 
-	if err != nil {
-		//TODO: Use err variable here
-		fmt.Print("result = ")
-		fmt.Println(result)
-	} else {
-		//TODO: Use result variable here
-		fmt.Print("resu=")
-		fmt.Println(err)
-	}
+
+  Body.Personalizations = make([]*models_pkg.Personalizations,3)
+  Body.Personalizations[0] = &models_pkg.Personalizations{}
+
+  var input interface{}
+  Body.Personalizations[0].To = make([]*models_pkg.EmailStruct,3)
+  Body.Personalizations[0].To[0] = &models_pkg.EmailStruct{}
+  Body.Personalizations[0].To[0].Name = &toName
+  Body.Personalizations[0].To[0].Email = &toEmail
+
+  Body.Settings = &models_pkg.Settings{}
+  Body.Settings.Footer = &trueValue
+  Body.Settings.ClickTrack = &trueValue
+  Body.Settings.OpenTrack = &falseValue
+  Body.Settings.UnsubscribeTrack = &trueValue
+
+  Body.Tags = &[]string{ "campaign" }
+
+  var err error
+  var result []string
+
+  result, err = send.CreateGenerateTheMailSendRequest(Body)
+
+  if err != nil{
+    fmt.Println(err)
+    //TODO: Use err variable here
+  }else{
+    //TODO: Use result variable here
+    fmt.Println(result)
+  }
 }
+
 ```
 
 <a name="announcements"></a>
