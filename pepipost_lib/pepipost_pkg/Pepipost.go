@@ -7,8 +7,8 @@
 package PepipostClient
 
 import(
-	"pepipost_lib/configuration_pkg"
-	"pepipost_lib/send_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/send_pkg"
 )
 
 

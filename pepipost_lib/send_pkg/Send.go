@@ -6,8 +6,8 @@
 
 package send_pkg
 
-import "pepipost_lib/configuration_pkg"
-import "pepipost_lib/models_pkg"
+import "github.com/pepipost/pepipost-sdk-go/pepipost_lib/configuration_pkg"
+import "github.com/pepipost/pepipost-sdk-go/pepipost_lib/models_pkg"
 
 /*
  * Interface for the SEND_IMPL

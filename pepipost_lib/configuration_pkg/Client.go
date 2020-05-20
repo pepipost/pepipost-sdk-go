@@ -7,7 +7,7 @@
 package configuration_pkg
 
 import(
-	"pepipost_lib/apihelper_pkg"
+	"github.com/pepipost/pepipost-sdk-go/pepipost_lib/apihelper_pkg"
 )
 /* Setting up enums for Environments and Servers 
 */
