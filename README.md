@@ -102,10 +102,13 @@ import(
 
 func main(){
 
-  ApiKey := "dfan3n4lk4212bjk39012hi3nrj1qk"
+  APIKey := "your api_key here"
 
-  client := PepipostClient.NewPEPIPOSTCLENT(ApiKey)
+  client := PepipostClient.NewPEPIPOST()
   send := client.Send()
+
+  setApikey := client.Configuration()
+	setApikey.SetApiKey(APIKey)
 
   fromEmail := "hello@your-registered-domain-with-pepipost"
   fromName := "Pepipost"
@@ -122,17 +125,17 @@ func main(){
   Body.From.Name = &fromName
 
   Body.Subject = "Pepipost Test Email from GOlang SDK"
-  Body.Content = make([]*models_pkg.Content,3)
+  Body.Content = make([]*models_pkg.Content,1)
   Body.Content[0] = &models_pkg.Content{}
   Body.Content[0].Type = models_pkg.Type_HTML
   Body.Content[0].Value = &htmlBody
 
 
-  Body.Personalizations = make([]*models_pkg.Personalizations,3)
+  Body.Personalizations = make([]*models_pkg.Personalizations,1)
   Body.Personalizations[0] = &models_pkg.Personalizations{}
 
   var input interface{}
-  Body.Personalizations[0].To = make([]*models_pkg.EmailStruct,3)
+  Body.Personalizations[0].To = make([]*models_pkg.EmailStruct,1)
   Body.Personalizations[0].To[0] = &models_pkg.EmailStruct{}
   Body.Personalizations[0].To[0].Name = &toName
   Body.Personalizations[0].To[0].Email = &toEmail
@@ -155,7 +158,7 @@ func main(){
     //TODO: Use err variable here
   }else{
     //TODO: Use result variable here
-    fmt.Println(result)
+    fmt.Println(result[0])
   }
 }
 
