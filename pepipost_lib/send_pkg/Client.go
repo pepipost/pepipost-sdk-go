@@ -50,7 +50,7 @@ func (me *SEND_IMPL) CreateGenerateTheMailSendRequest (
       "user-agent" : "APIMATIC 2.0",
       "accept" : "application/json",
       "content-type" : "application/json; charset=utf-8",
-      "api_key" :   me.config.ApiKey,
+      "api_key" :   me.config.ApiKey(),
     }
 
     //prepare API request
@@ -65,10 +65,10 @@ func (me *SEND_IMPL) CreateGenerateTheMailSendRequest (
     //error handling using HTTP status codes
     if (_response.Code == 405) {
       err = apihelper_pkg.NewAPIError("Invalid input", _response.Code, _response.RawBody)
-    } else if (_response.Code == 400) {
-      err = apihelper_pkg.NewAPIError("Bad request", _response.Code, _response.RawBody)
     } else if (_response.Code < 200) || (_response.Code > 206) { //[200,206] = HTTP OK
-      err = apihelper_pkg.NewAPIError("HTTP Response Not OK", _response.Code, _response.RawBody)
+      if !(_response.Code == 400 || _response.Code == 401 || _response.Code == 403) {
+          err = apihelper_pkg.NewAPIError("HTTP Response Not OK", _response.Code, _response.RawBody)
+      }
     }
     if(err != nil) {
       //error detected in status code validation
@@ -76,13 +76,14 @@ func (me *SEND_IMPL) CreateGenerateTheMailSendRequest (
     }
 
     //returning the response
-    var retVal []string
-    err = json.Unmarshal(_response.RawBody, &retVal)
+    retVal := []string{_response.Body}
+    //var retVal []string
+    //err = json.Unmarshal(_response.RawBody, &retVal)
 
-    if err != nil {
+    //if err != nil {
       //error in parsing
-      return nil, err
-    }
+    //  return nil, err
+    //}
     return retVal, nil
 
   }
