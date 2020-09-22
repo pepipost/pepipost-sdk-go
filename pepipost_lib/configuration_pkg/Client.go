@@ -8,7 +8,7 @@ package configuration_pkg
 
 
 /** The base Uri for API calls */
-const BASEURI string = "https://api.pepipost.com/v5"
+const BASEURI string = "https://api.pepipost.com/v5.1"
 
 
 
