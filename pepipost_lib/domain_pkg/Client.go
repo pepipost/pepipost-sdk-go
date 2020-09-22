@@ -26,7 +26,7 @@ type DOMAIN_IMPL struct {
  * @param    *models_pkg.DomainStruct        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
-func (me *DOMAIN_IMPL) AddDomain (
+func (me *DOMAIN_IMPL) Adddomain (
             body *models_pkg.DomainStruct) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/domain"

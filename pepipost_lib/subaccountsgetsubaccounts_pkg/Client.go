@@ -22,13 +22,11 @@ type SUBACCOUNTSGETSUBACCOUNTS_IMPL struct {
 
 /**
  * Lets you fetch all the subaccounts created by you
- * @param    string        limit      parameter: Required
- * @param    string        offset     parameter: Required
+ * @param    string        username     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTSGETSUBACCOUNTS_IMPL) GetSubaccountsGetSubAccountsGET (
-            limit string,
-            offset string) (interface{}, error) {
+            username string) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts/getSubAccounts"
 
@@ -42,8 +40,7 @@ func (me *SUBACCOUNTSGETSUBACCOUNTS_IMPL) GetSubaccountsGetSubAccountsGET (
 
     //process optional query parameters
     _queryBuilder, err = apihelper_pkg.AppendUrlWithQueryParameters(_queryBuilder, map[string]interface{} {
-        "limit" : limit,
-        "offset" : offset,
+        "username" : username,
     })
     if err != nil {
         //error in query param handling

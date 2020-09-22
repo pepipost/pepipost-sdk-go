@@ -23,11 +23,11 @@ type SUBACCOUNTS_IMPL struct {
 
 /**
  * Lets you enable or disable a subaccount
- * @param    *models_pkg.EnableOrDisableSubacoount        body     parameter: Required
+ * @param    *models_pkg.Enableordisablesubacoount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTS_IMPL) UpdateSubaccountsPATCH (
-            body *models_pkg.EnableOrDisableSubacoount) (interface{}, error) {
+            body *models_pkg.Enableordisablesubacoount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts"
 

@@ -14,12 +14,15 @@ import(
 	"pepipost_lib/subaccounts_pkg"
 	"pepipost_lib/subaccountsdelete_pkg"
 	"pepipost_lib/subaccountsgetsubaccounts_pkg"
+	"pepipost_lib/subaccountsgetcreditddetails_pkg"
 	"pepipost_lib/setrecurringcreditddetails_pkg"
 	"pepipost_lib/subaccountssetsubaccountcredit_pkg"
 	"pepipost_lib/subaccountsupdatesubaccount_pkg"
 	"pepipost_lib/subaccountscreatesubaccount_pkg"
 	"pepipost_lib/suppression_pkg"
 	"pepipost_lib/domaindelete_pkg"
+	"pepipost_lib/domaingetdomains_pkg"
+	"pepipost_lib/template_pkg"
 	"pepipost_lib/domain_pkg"
 )
 /*
@@ -32,12 +35,15 @@ type PEPIPOST_IMPL struct {
      subaccounts subaccounts_pkg.SUBACCOUNTS
      subaccountsdelete subaccountsdelete_pkg.SUBACCOUNTSDELETE
      subaccountsgetsubaccounts subaccountsgetsubaccounts_pkg.SUBACCOUNTSGETSUBACCOUNTS
+     subaccountsgetcreditddetails subaccountsgetcreditddetails_pkg.SUBACCOUNTSGETCREDITDDETAILS
      setrecurringcreditddetails setrecurringcreditddetails_pkg.SETRECURRINGCREDITDDETAILS
      subaccountssetsubaccountcredit subaccountssetsubaccountcredit_pkg.SUBACCOUNTSSETSUBACCOUNTCREDIT
      subaccountsupdatesubaccount subaccountsupdatesubaccount_pkg.SUBACCOUNTSUPDATESUBACCOUNT
      subaccountscreatesubaccount subaccountscreatesubaccount_pkg.SUBACCOUNTSCREATESUBACCOUNT
      suppression suppression_pkg.SUPPRESSION
      domaindelete domaindelete_pkg.DOMAINDELETE
+     domaingetdomains domaingetdomains_pkg.DOMAINGETDOMAINS
+     template template_pkg.TEMPLATE
      domain domain_pkg.DOMAIN
      config  configuration_pkg.CONFIGURATION
 }
@@ -110,6 +116,16 @@ func (me *PEPIPOST_IMPL) SubaccountsGetSubAccounts() subaccountsgetsubaccounts_p
     return me.subaccountsgetsubaccounts
 }
 /**
+     * Access to SubaccountsGetcreditddetails controller
+     * @return Returns the SubaccountsGetcreditddetails() instance
+*/
+func (me *PEPIPOST_IMPL) SubaccountsGetcreditddetails() subaccountsgetcreditddetails_pkg.SUBACCOUNTSGETCREDITDDETAILS {
+    if(me.subaccountsgetcreditddetails) == nil {
+        me.subaccountsgetcreditddetails = subaccountsgetcreditddetails_pkg.NewSUBACCOUNTSGETCREDITDDETAILS(me.config)
+    }
+    return me.subaccountsgetcreditddetails
+}
+/**
      * Access to Setrecurringcreditddetails controller
      * @return Returns the Setrecurringcreditddetails() instance
 */
@@ -168,6 +184,26 @@ func (me *PEPIPOST_IMPL) DomainDelete() domaindelete_pkg.DOMAINDELETE {
         me.domaindelete = domaindelete_pkg.NewDOMAINDELETE(me.config)
     }
     return me.domaindelete
+}
+/**
+     * Access to DomainGetDomains controller
+     * @return Returns the DomainGetDomains() instance
+*/
+func (me *PEPIPOST_IMPL) DomainGetDomains() domaingetdomains_pkg.DOMAINGETDOMAINS {
+    if(me.domaingetdomains) == nil {
+        me.domaingetdomains = domaingetdomains_pkg.NewDOMAINGETDOMAINS(me.config)
+    }
+    return me.domaingetdomains
+}
+/**
+     * Access to Template controller
+     * @return Returns the Template() instance
+*/
+func (me *PEPIPOST_IMPL) Template() template_pkg.TEMPLATE {
+    if(me.template) == nil {
+        me.template = template_pkg.NewTEMPLATE(me.config)
+    }
+    return me.template
 }
 /**
      * Access to Domain controller

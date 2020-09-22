@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the DOMAIN_IMPL
  */
 type DOMAIN interface {
-    AddDomain (*models_pkg.DomainStruct) (interface{}, error)
+    Adddomain (*models_pkg.DomainStruct) (interface{}, error)
 }
 
 /*

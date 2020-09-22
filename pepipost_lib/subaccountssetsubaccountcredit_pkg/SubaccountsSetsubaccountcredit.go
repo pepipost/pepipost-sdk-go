@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the SUBACCOUNTSSETSUBACCOUNTCREDIT_IMPL
  */
 type SUBACCOUNTSSETSUBACCOUNTCREDIT interface {
-    CreateSubaccountsSetsubaccountcreditPOST (*models_pkg.UpdateCredisOfSubaccount) (interface{}, error)
+    CreateSubaccountsSetsubaccountcreditPOST (*models_pkg.UpdateCredisofsubaccount) (interface{}, error)
 }
 
 /*

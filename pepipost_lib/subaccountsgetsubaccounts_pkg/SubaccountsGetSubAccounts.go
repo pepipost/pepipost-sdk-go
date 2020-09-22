@@ -12,7 +12,7 @@ import "pepipost_lib/configuration_pkg"
  * Interface for the SUBACCOUNTSGETSUBACCOUNTS_IMPL
  */
 type SUBACCOUNTSGETSUBACCOUNTS interface {
-    GetSubaccountsGetSubAccountsGET (string, string) (interface{}, error)
+    GetSubaccountsGetSubAccountsGET (string) (interface{}, error)
 }
 
 /*

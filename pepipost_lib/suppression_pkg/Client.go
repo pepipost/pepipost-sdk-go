@@ -23,11 +23,11 @@ type SUPPRESSION_IMPL struct {
 
 /**
  * This API allows you to suppress an email address and block any future email delivery attempts on this email address.
- * @param    *models_pkg.AddEmailOrDomainToSuppressionList        body     parameter: Required
+ * @param    *models_pkg.AddemailordomaintoSuppressionlist        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
-func (me *SUPPRESSION_IMPL) AddDomainOrEmailToSuppressionList (
-            body *models_pkg.AddEmailOrDomainToSuppressionList) (interface{}, error) {
+func (me *SUPPRESSION_IMPL) Adddomainoremailtosuppressionlist (
+            body *models_pkg.AddemailordomaintoSuppressionlist) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/suppression"
 
@@ -90,11 +90,11 @@ func (me *SUPPRESSION_IMPL) AddDomainOrEmailToSuppressionList (
 
 /**
  * Use this API to remove an email address or a recipient domain from the suppression list. You can remove multiple email addresses and recipient domains together by passing them as values & separating them using commas as shown below.
- * @param    *models_pkg.RemoveEmailOrDomainToSuppressionList        body     parameter: Required
+ * @param    *models_pkg.RemoveemailordomaintoSuppressionlist        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
-func (me *SUPPRESSION_IMPL) RemoveDomainOrEmailToSuppressionList (
-            body *models_pkg.RemoveEmailOrDomainToSuppressionList) (interface{}, error) {
+func (me *SUPPRESSION_IMPL) Removedomainoremailtosuppressionlist (
+            body *models_pkg.RemoveemailordomaintoSuppressionlist) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/suppression"
 

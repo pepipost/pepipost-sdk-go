@@ -93,32 +93,32 @@ type DomainStruct struct {
 }
 
 /*
- * Structure for the custom type DeleteDomain
+ * Structure for the custom type Deletedomain
  */
-type DeleteDomain struct {
+type Deletedomain struct {
     Domain          *string         `json:"domain,omitempty" form:"domain,omitempty"` //Name of the domain
 }
 
 /*
- * Structure for the custom type AddEmailOrDomainToSuppressionList
+ * Structure for the custom type AddemailordomaintoSuppressionlist
  */
-type AddEmailOrDomainToSuppressionList struct {
+type AddemailordomaintoSuppressionlist struct {
     Domain          *string         `json:"domain,omitempty" form:"domain,omitempty"` //Add the domain to be suppressed here. We will not deliver emails to recipients email addresses with this domain.<br>\nComma separate the values to suppress multiple domains..
     Email           *string         `json:"email,omitempty" form:"email,omitempty"` //Add an email address to be suppressed here. We will not deliver emails to this email address.<br>\nComma separate the values to suppress multiple email addresses
 }
 
 /*
- * Structure for the custom type RemoveEmailOrDomainToSuppressionList
+ * Structure for the custom type RemoveemailordomaintoSuppressionlist
  */
-type RemoveEmailOrDomainToSuppressionList struct {
+type RemoveemailordomaintoSuppressionlist struct {
     Domain          *string         `json:"domain,omitempty" form:"domain,omitempty"` //List one or more recipient domains to be removed from the suppression list here. <br>\nComma separate the values to suppress multiple recipient domains.
     Email           *string         `json:"email,omitempty" form:"email,omitempty"` //List one or more email addresses to be removed from the suppression list here. <br>\nComma separate the values to suppress multiple email addresses.
 }
 
 /*
- * Structure for the custom type CreateSubaccount
+ * Structure for the custom type Createsubaccount
  */
-type CreateSubaccount struct {
+type Createsubaccount struct {
     Username        string          `json:"username" form:"username"` //provide a username for the subaccount
     Email           string          `json:"email" form:"email"` //email address to be registered with the account.
     Setpassword     string          `json:"setpassword" form:"setpassword"` //You can opt to set the password for the subaccount.\nIf set as 1, please provide a value in password parameter.\nIf set as 0, the email confirmation link will act as a password reset link.
@@ -127,9 +127,9 @@ type CreateSubaccount struct {
 }
 
 /*
- * Structure for the custom type UpdateSubaccount
+ * Structure for the custom type Updatesubaccount
  */
-type UpdateSubaccount struct {
+type Updatesubaccount struct {
     Username         *string         `json:"username,omitempty" form:"username,omitempty"` //The username for the subaccount
     NewEmail         *string         `json:"new_email,omitempty" form:"new_email,omitempty"` //The new email address to be registered with the subaccount
     NewPassword      *string         `json:"new_password,omitempty" form:"new_password,omitempty"` //The new password of the subaccount
@@ -138,18 +138,18 @@ type UpdateSubaccount struct {
 }
 
 /*
- * Structure for the custom type UpdateCredisOfSubaccount
+ * Structure for the custom type UpdateCredisofsubaccount
  */
-type UpdateCredisOfSubaccount struct {
+type UpdateCredisofsubaccount struct {
     Username        *string         `json:"username,omitempty" form:"username,omitempty"` //The username of the subaccount
     Action          ActionEnum      `json:"action,omitempty" form:"action,omitempty"` //Indicate the action (add or subtract) to be taken.Allowed values increase, decrease
     Amount          *int64          `json:"amount,omitempty" form:"amount,omitempty"` //Amount of credits
 }
 
 /*
- * Structure for the custom type UpdateRecurringCredisOfSubaccount
+ * Structure for the custom type UpdaterecurringCredisofsubaccount
  */
-type UpdateRecurringCredisOfSubaccount struct {
+type UpdaterecurringCredisofsubaccount struct {
     Username         *string         `json:"username,omitempty" form:"username,omitempty"` //The username of the subaccount
     RecurringCredit  *int64          `json:"recurring_credit,omitempty" form:"recurring_credit,omitempty"` //The amount to be added periodically
     Timeperiod       TimeperiodEnum  `json:"timeperiod,omitempty" form:"timeperiod,omitempty"` //The periodic \n\nAllowed values  \"daily\", \"weekly\", \"monhtly\"
@@ -159,16 +159,16 @@ type UpdateRecurringCredisOfSubaccount struct {
 }
 
 /*
- * Structure for the custom type DeleteSubacoount
+ * Structure for the custom type Deletesubacoount
  */
-type DeleteSubacoount struct {
+type Deletesubacoount struct {
     Username        *string         `json:"username,omitempty" form:"username,omitempty"` //The username of the subaccount
 }
 
 /*
- * Structure for the custom type EnableOrDisableSubacoount
+ * Structure for the custom type Enableordisablesubacoount
  */
-type EnableOrDisableSubacoount struct {
+type Enableordisablesubacoount struct {
     Username        *string         `json:"username,omitempty" form:"username,omitempty"` //The username of the subaccount
     Disabled        *bool           `json:"disabled,omitempty" form:"disabled,omitempty"` //Flag to indicate whether the subaccount should be enabled or disabled.
 }

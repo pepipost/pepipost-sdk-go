@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the SUBACCOUNTS_IMPL
  */
 type SUBACCOUNTS interface {
-    UpdateSubaccountsPATCH (*models_pkg.EnableOrDisableSubacoount) (interface{}, error)
+    UpdateSubaccountsPATCH (*models_pkg.Enableordisablesubacoount) (interface{}, error)
 }
 
 /*

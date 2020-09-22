@@ -23,11 +23,11 @@ type DOMAINDELETE_IMPL struct {
 
 /**
  * This endpoint allows you to delete a domain from your Pepipost account.
- * @param    *models_pkg.DeleteDomain        body     parameter: Required
+ * @param    *models_pkg.Deletedomain        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
-func (me *DOMAINDELETE_IMPL) DeleteDomain (
-            body *models_pkg.DeleteDomain) (interface{}, error) {
+func (me *DOMAINDELETE_IMPL) Deletedomain (
+            body *models_pkg.Deletedomain) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/domain/delete"
 

@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the SETRECURRINGCREDITDDETAILS_IMPL
  */
 type SETRECURRINGCREDITDDETAILS interface {
-    CreateSetrecurringcreditddetailsPOST (*models_pkg.UpdateRecurringCredisOfSubaccount) (interface{}, error)
+    CreateSetrecurringcreditddetailsPOST (*models_pkg.UpdaterecurringCredisofsubaccount) (interface{}, error)
 }
 
 /*

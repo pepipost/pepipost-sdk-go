@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the DOMAINDELETE_IMPL
  */
 type DOMAINDELETE interface {
-    DeleteDomain (*models_pkg.DeleteDomain) (interface{}, error)
+    Deletedomain (*models_pkg.Deletedomain) (interface{}, error)
 }
 
 /*

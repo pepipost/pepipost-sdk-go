@@ -23,11 +23,11 @@ type SETRECURRINGCREDITDDETAILS_IMPL struct {
 
 /**
  * Lets you configure a recurring credit allocation to a subaccount
- * @param    *models_pkg.UpdateRecurringCredisOfSubaccount        body     parameter: Required
+ * @param    *models_pkg.UpdaterecurringCredisofsubaccount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SETRECURRINGCREDITDDETAILS_IMPL) CreateSetrecurringcreditddetailsPOST (
-            body *models_pkg.UpdateRecurringCredisOfSubaccount) (interface{}, error) {
+            body *models_pkg.UpdaterecurringCredisofsubaccount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/setrecurringcreditddetails"
 

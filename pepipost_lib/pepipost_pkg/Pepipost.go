@@ -14,12 +14,15 @@ import(
 	"pepipost_lib/subaccounts_pkg"
 	"pepipost_lib/subaccountsdelete_pkg"
 	"pepipost_lib/subaccountsgetsubaccounts_pkg"
+	"pepipost_lib/subaccountsgetcreditddetails_pkg"
 	"pepipost_lib/setrecurringcreditddetails_pkg"
 	"pepipost_lib/subaccountssetsubaccountcredit_pkg"
 	"pepipost_lib/subaccountsupdatesubaccount_pkg"
 	"pepipost_lib/subaccountscreatesubaccount_pkg"
 	"pepipost_lib/suppression_pkg"
 	"pepipost_lib/domaindelete_pkg"
+	"pepipost_lib/domaingetdomains_pkg"
+	"pepipost_lib/template_pkg"
 	"pepipost_lib/domain_pkg"
 )
 
@@ -34,12 +37,15 @@ type PEPIPOST interface {
     Subaccounts()           subaccounts_pkg.SUBACCOUNTS
     SubaccountsDelete()       subaccountsdelete_pkg.SUBACCOUNTSDELETE
     SubaccountsGetSubAccounts()       subaccountsgetsubaccounts_pkg.SUBACCOUNTSGETSUBACCOUNTS
+    SubaccountsGetcreditddetails()       subaccountsgetcreditddetails_pkg.SUBACCOUNTSGETCREDITDDETAILS
     Setrecurringcreditddetails()       setrecurringcreditddetails_pkg.SETRECURRINGCREDITDDETAILS
     SubaccountsSetsubaccountcredit()       subaccountssetsubaccountcredit_pkg.SUBACCOUNTSSETSUBACCOUNTCREDIT
     SubaccountsUpdateSubaccount()       subaccountsupdatesubaccount_pkg.SUBACCOUNTSUPDATESUBACCOUNT
     SubaccountsCreateSubaccount()       subaccountscreatesubaccount_pkg.SUBACCOUNTSCREATESUBACCOUNT
     Suppression()           suppression_pkg.SUPPRESSION
     DomainDelete()          domaindelete_pkg.DOMAINDELETE
+    DomainGetDomains()       domaingetdomains_pkg.DOMAINGETDOMAINS
+    Template()              template_pkg.TEMPLATE
     Domain()                domain_pkg.DOMAIN
     Configuration()         configuration_pkg.CONFIGURATION
 }

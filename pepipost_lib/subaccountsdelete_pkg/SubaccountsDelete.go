@@ -13,7 +13,7 @@ import "pepipost_lib/models_pkg"
  * Interface for the SUBACCOUNTSDELETE_IMPL
  */
 type SUBACCOUNTSDELETE interface {
-    DeleteSubaccountsDeleteDELETE (*models_pkg.DeleteSubacoount) (interface{}, error)
+    DeleteSubaccountsDeleteDELETE (*models_pkg.Deletesubacoount) (interface{}, error)
 }
 
 /*

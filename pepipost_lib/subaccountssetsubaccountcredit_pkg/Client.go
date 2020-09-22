@@ -23,11 +23,11 @@ type SUBACCOUNTSSETSUBACCOUNTCREDIT_IMPL struct {
 
 /**
  * Lets you add(or remove) credits to a subaccount
- * @param    *models_pkg.UpdateCredisOfSubaccount        body     parameter: Required
+ * @param    *models_pkg.UpdateCredisofsubaccount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTSSETSUBACCOUNTCREDIT_IMPL) CreateSubaccountsSetsubaccountcreditPOST (
-            body *models_pkg.UpdateCredisOfSubaccount) (interface{}, error) {
+            body *models_pkg.UpdateCredisofsubaccount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts/setsubaccountcredit"
 

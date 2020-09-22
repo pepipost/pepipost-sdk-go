@@ -23,11 +23,11 @@ type SUBACCOUNTSUPDATESUBACCOUNT_IMPL struct {
 
 /**
  * lets you update credentials and credit type of a subaccount.
- * @param    *models_pkg.UpdateSubaccount        body     parameter: Required
+ * @param    *models_pkg.Updatesubaccount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTSUPDATESUBACCOUNT_IMPL) CreateSubaccountsUpdateSubaccountPOST (
-            body *models_pkg.UpdateSubaccount) (interface{}, error) {
+            body *models_pkg.Updatesubaccount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts/updateSubaccount"
 

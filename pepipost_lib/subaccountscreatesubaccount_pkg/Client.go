@@ -23,11 +23,11 @@ type SUBACCOUNTSCREATESUBACCOUNT_IMPL struct {
 
 /**
  * Subaccount is the same as any regular Pepipost account however the credits are managed by the master account.
- * @param    *models_pkg.CreateSubaccount        body     parameter: Required
+ * @param    *models_pkg.Createsubaccount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTSCREATESUBACCOUNT_IMPL) CreateSubaccountsCreateSubaccountPOST (
-            body *models_pkg.CreateSubaccount) (interface{}, error) {
+            body *models_pkg.Createsubaccount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts/createSubaccount"
 

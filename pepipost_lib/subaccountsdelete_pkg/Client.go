@@ -23,11 +23,11 @@ type SUBACCOUNTSDELETE_IMPL struct {
 
 /**
  * Lets you delete a subaccount
- * @param    *models_pkg.DeleteSubacoount        body     parameter: Required
+ * @param    *models_pkg.Deletesubacoount        body     parameter: Required
  * @return	Returns the interface{} response from the API call
  */
 func (me *SUBACCOUNTSDELETE_IMPL) DeleteSubaccountsDeleteDELETE (
-            body *models_pkg.DeleteSubacoount) (interface{}, error) {
+            body *models_pkg.Deletesubacoount) (interface{}, error) {
     //the endpoint path uri
     _pathUrl := "/subaccounts/delete"
 

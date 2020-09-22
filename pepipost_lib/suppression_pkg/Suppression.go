@@ -13,9 +13,9 @@ import "pepipost_lib/models_pkg"
  * Interface for the SUPPRESSION_IMPL
  */
 type SUPPRESSION interface {
-    AddDomainOrEmailToSuppressionList (*models_pkg.AddEmailOrDomainToSuppressionList) (interface{}, error)
+    Adddomainoremailtosuppressionlist (*models_pkg.AddemailordomaintoSuppressionlist) (interface{}, error)
 
-    RemoveDomainOrEmailToSuppressionList (*models_pkg.RemoveEmailOrDomainToSuppressionList) (interface{}, error)
+    Removedomainoremailtosuppressionlist (*models_pkg.RemoveemailordomaintoSuppressionlist) (interface{}, error)
 }
 
 /*
