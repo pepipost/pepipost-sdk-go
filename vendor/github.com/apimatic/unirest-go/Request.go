@@ -51,6 +51,7 @@ func makeRequest(method HttpMethod, url string,
 	request.transport = &http.Transport{DisableKeepAlives: false, MaxIdleConnsPerHost: 2}
 	request.httpClient = &http.Client{
 		Transport: request.transport,
+		Timeout: 30 * time.Second,
 	}
 
 	//perpare the request parameters
@@ -82,7 +83,7 @@ func (me *Request) PerformRequest(skipVerify bool) (*http.Response, error) {
 
 	//set timeout values
 	me.httpClient.Transport.(*http.Transport).TLSHandshakeTimeout += 2 * time.Second
-	me.httpClient.Transport.(*http.Transport).ResponseHeaderTimeout = 10 * time.Second
+	// me.httpClient.Transport.(*http.Transport).ResponseHeaderTimeout = 10 * time.Second
 	
 	//set skipVerify SSL
 	me.httpClient.Transport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: skipVerify}
